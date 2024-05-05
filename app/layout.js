@@ -1,7 +1,19 @@
-import { Inter } from "next/font/google";
 import "./globals.css";
+import local from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+const alhurra = local({
+  src: [
+    {
+      path: "../public/fonts/Alhurra-2020-Regular.ttf",
+      weight: "100 400",
+    },
+    {
+      path: "../public/fonts/Alhurra-2020-Bold.ttf",
+      weight: "500 900",
+    },
+  ],
+  name: "alhurra",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -10,8 +22,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ar" dir={"rtl"}>
+      <body className={alhurra.className}>{children}</body>
     </html>
   );
 }
